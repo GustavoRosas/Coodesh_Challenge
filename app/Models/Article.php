@@ -29,5 +29,5 @@ class Article extends Model
 
     public $timestamps = false;
 
-    protected $connection = 'mysql';
+    protected $connection = 'pgsql';
 }
