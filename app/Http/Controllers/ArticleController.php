@@ -9,11 +9,12 @@ use App\Http\Requests\ArticleRequest;
 class ArticleController extends Controller
 {
     public function challenge(){
-        return 'Back-end Challenge 2021 🏅 - Space Flight News';
+        return response('Back-end Challenge 2021 🏅 - Space Flight News', 200)
+        ->header('Content-Type', 'text/plain');;
     }
 
     public function listAllArticles(){
-        $obArticle = Article::all();  
+        $obArticle = Article::paginate(10);
         return response()->json($obArticle);
     }
 
