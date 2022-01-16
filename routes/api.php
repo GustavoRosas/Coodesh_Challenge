@@ -18,7 +18,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get(':', 'App\Http\Controllers\ArticleController@challenge');
+Route::get('', 'App\Http\Controllers\ArticleController@challenge');
 
-Route::get('articles/:', 'App\Http\Controllers\ArticleController@listArticles');
+Route::get('articles/', 'App\Http\Controllers\ArticleController@listAllArticles');
+
+Route::get('articles/{id}', 'App\Http\Controllers\ArticleController@listArticle');
+
+Route::post('articles/', 'App\Http\Controllers\ArticleController@addArticle');
+
+Route::put('articles/{id}', 'App\Http\Controllers\ArticleController@updateArticle');
+
+Route::delete('articles/{id}', 'App\Http\Controllers\ArticleController@deleteArticle');
+
+
 

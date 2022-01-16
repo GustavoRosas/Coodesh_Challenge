@@ -28,6 +28,4 @@ class Article extends Model
     ];
 
     public $timestamps = false;
-
-    protected $connection = 'pgsql';
 }
