@@ -16,13 +16,13 @@ class Article extends Migration
         Schema::create('article', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->boolean('featured')->default(false);
-            $table->string('title');
-            $table->string('url');
-            $table->string('imageUrl');
-            $table->string('newsSite');
-            $table->string('summary');
-            $table->string('publishedAt');
-            $table->string('updatedAt');
+            $table->string('title',150);
+            $table->string('url', 150);
+            $table->string('imageUrl', 150);
+            $table->string('newsSite', 60);
+            $table->string('summary', 500);
+            $table->string('publishedAt', 30);
+            $table->string('updatedAt', 30);
             $table->json('launches');
             $table->json('events');
         });

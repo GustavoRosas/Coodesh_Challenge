@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Article;
 use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Stream\Stream;
 
 class ArticleTableSeeder extends Seeder
 {
@@ -16,8 +17,8 @@ class ArticleTableSeeder extends Seeder
     public function run()
     {
         Article::truncate();
-
-        $spaceFlightData = Http::get('https://api.spaceflightnewsapi.net/v3/articles')->json();
+        $spaceFlightData = array();
+        $spaceFlightData = Http::withoutVerifying()->get('https://api.spaceflightnewsapi.net/v3/articles')->json();
 
         foreach($spaceFlightData as $arData)
         {

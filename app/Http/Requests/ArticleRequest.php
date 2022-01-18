@@ -25,13 +25,13 @@ class ArticleRequest extends FormRequest
     {
         return [
             'featured' => 'boolean',
-            'title' => 'required|string',
-            'url' => 'required|string',
-            'imageUrl' => 'required|string',
-            'newsSite' => 'required|string',
-            'summary' => 'required|string',
-            'publishedAt' => 'required|string',
-            'updatedAt' => 'required|string',
+            'title' => 'required|string|max:150',
+            'url' => 'required|string|max:150',
+            'imageUrl' => 'required|string|max:150',
+            'newsSite' => 'required|string|max:60',
+            'summary' => 'required|string|max:500',
+            'publishedAt' => 'required|string|max:30',
+            'updatedAt' => 'required|string|max:30',
             'launches' => 'required|string',
             'events' => 'required|string',
         ];
